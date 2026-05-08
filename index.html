@@ -3,24 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diego Alonso Rotta Valverde | State, Law and the Economy – The University of Hong Kong</title>
+<title>Diego Alonso Rotta Valverde | Economic Growth and Distributive Justice – Tel Aviv University</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
 
   :root{
-    --hku-green: #00573F;
-    --hku-green-dark: #003D2C;
-    --hku-green-light: #006B4F;
-    --hku-gold: #B8972A;
-    --hku-gold-light: #D4B04A;
-    --hku-red: #8B1A1A;
-    --bg: #F4F1EC;
-    --surface: #FFFDF9;
-    --border: #D9D0BC;
-    --text-primary: #1A1A14;
-    --text-secondary: #4A4A3A;
-    --text-muted: #7A7A6A;
+    --tau-wine: #7B1D3F;
+    --tau-wine-dark: #5C1530;
+    --tau-wine-light: #9A2550;
+    --tau-bronze: #C4813A;
+    --tau-bronze-light: #D99A55;
+    --bg: #F5F0F2;
+    --surface: #FFFBFC;
+    --border: #DDD0D5;
+    --text-primary: #1A1014;
+    --text-secondary: #4A3A3E;
+    --text-muted: #8A7A7E;
   }
 
   body{
@@ -28,8 +27,8 @@
     background-color: var(--bg);
     min-height:100vh;
     padding:48px 20px;
-    background-image: radial-gradient(ellipse at 20% 10%, rgba(0,87,63,0.06) 0%, transparent 60%),
-                      radial-gradient(ellipse at 80% 90%, rgba(184,151,42,0.06) 0%, transparent 60%);
+    background-image: radial-gradient(ellipse at 20% 10%, rgba(123,29,63,0.06) 0%, transparent 60%),
+                      radial-gradient(ellipse at 80% 90%, rgba(196,129,58,0.06) 0%, transparent 60%);
   }
 
   .page-wrap{
@@ -43,13 +42,13 @@
     margin-bottom: 48px;
   }
 
-  .logo-ring{
+  .logo-wrap{
     display:inline-block;
     margin-bottom: 24px;
   }
 
-  .logo-ring img{
-    width:370px;
+  .logo-wrap img{
+    width:170px;
     height:auto;
   }
 
@@ -58,7 +57,7 @@
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--hku-green);
+    color: var(--tau-wine);
     margin-bottom: 10px;
   }
 
@@ -75,7 +74,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.1em;
     font-weight: 400;
-    color: var(--hku-green);
+    color: var(--tau-wine);
     font-style: italic;
     margin-bottom: 6px;
   }
@@ -97,17 +96,17 @@
   .ornament-line{
     height:1px;
     width:80px;
-    background: linear-gradient(to right, transparent, var(--hku-gold));
+    background: linear-gradient(to right, transparent, var(--tau-bronze));
   }
 
   .ornament-line.right{
-    background: linear-gradient(to left, transparent, var(--hku-gold));
+    background: linear-gradient(to left, transparent, var(--tau-bronze));
   }
 
   .ornament-diamond{
     width:8px;
     height:8px;
-    background: var(--hku-gold);
+    background: var(--tau-bronze);
     transform: rotate(45deg);
   }
 
@@ -117,7 +116,7 @@
     font-weight:600;
     letter-spacing:0.16em;
     text-transform:uppercase;
-    color: var(--hku-gold);
+    color: var(--tau-bronze);
     margin-bottom:18px;
     display:flex;
     align-items:center;
@@ -158,15 +157,15 @@
     position:absolute;
     left:0; top:0; bottom:0;
     width:4px;
-    background: var(--hku-green);
+    background: var(--tau-wine);
     border-radius: 6px 0 0 6px;
     transition: width 0.25s;
   }
 
   .card:hover{
-    box-shadow: 0 10px 36px rgba(0,87,63,0.14);
+    box-shadow: 0 10px 36px rgba(123,29,63,0.14);
     transform: translateY(-3px);
-    border-color: var(--hku-green);
+    border-color: var(--tau-wine);
   }
 
   .card:hover::before{
@@ -178,7 +177,7 @@
     width:54px;
     height:54px;
     border-radius:50%;
-    background: var(--hku-green);
+    background: var(--tau-wine);
     color:#fff;
     display:flex;
     align-items:center;
@@ -199,8 +198,8 @@
     font-weight:600;
     letter-spacing:0.12em;
     text-transform:uppercase;
-    color: var(--hku-green);
-    background: rgba(0,87,63,0.07);
+    color: var(--tau-wine);
+    background: rgba(123,29,63,0.07);
     padding:3px 10px;
     border-radius:2px;
     margin-bottom:10px;
@@ -227,20 +226,9 @@
     margin-bottom:14px;
   }
 
-  .card-id{
-    font-size:0.72em;
-    color: var(--text-muted);
-    font-family: 'Courier New', monospace;
-    background: rgba(0,0,0,0.04);
-    padding:4px 8px;
-    border-radius:3px;
-    margin-bottom:16px;
-    word-break:break-all;
-  }
-
   .btn{
     display:inline-block;
-    background: var(--hku-green);
+    background: var(--tau-wine);
     color:#fff;
     padding:9px 20px;
     border-radius:3px;
@@ -251,58 +239,7 @@
     transition:background 0.2s;
   }
 
-  .btn:hover{background: var(--hku-green-dark);}
-
-  /* ── Signatory block ── */
-  .signatory{
-    background: var(--surface);
-    border:1px solid var(--border);
-    border-radius:6px;
-    padding:24px 28px;
-    margin-bottom: 40px;
-    display:flex;
-    align-items:center;
-    gap:20px;
-  }
-
-  .signatory-icon{
-    flex-shrink:0;
-    width:44px;
-    height:44px;
-    border-radius:50%;
-    border:2px solid var(--hku-gold);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color: var(--hku-gold);
-    font-size:1.2em;
-  }
-
-  .signatory-text{
-    flex:1;
-  }
-
-  .signatory-text .sig-label{
-    font-size:0.68em;
-    font-weight:600;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color: var(--text-muted);
-    margin-bottom:4px;
-  }
-
-  .signatory-text .sig-name{
-    font-family:'Playfair Display',serif;
-    font-size:0.98em;
-    font-weight:700;
-    color: var(--text-primary);
-    margin-bottom:2px;
-  }
-
-  .signatory-text .sig-role{
-    font-size:0.79em;
-    color: var(--text-secondary);
-  }
+  .btn:hover{background: var(--tau-wine-dark);}
 
   /* ── Footer ── */
   .repo-note{
@@ -321,18 +258,6 @@
     margin-top:8px;
   }
 
-  .edx-note{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    font-size:0.74em;
-    color: var(--text-muted);
-    background: rgba(0,0,0,0.04);
-    padding:4px 12px;
-    border-radius:20px;
-    margin-top:6px;
-  }
-
   @media(max-width:580px){
     .card{flex-direction:column;gap:16px;}
     .card-number{width:42px;height:42px;font-size:1.1em;}
@@ -346,12 +271,12 @@
 
   <!-- Header -->
   <div class="header">
-    <div class="logo-ring">
-      <img src="https://raw.githubusercontent.com/rotvaldi/certificatehongkong/main/University_of_Hong_Kong_Logo.png" alt="The University of Hong Kong" />
+    <div class="logo-wrap">
+      <img src="https://raw.githubusercontent.com/rotvaldi/certificatetelaviv/main/Tel_Aviv_university_logo_-_Hebrew.png" alt="Tel Aviv University" />
     </div>
-    <p class="header-label">The University of Hong Kong</p>
+    <p class="header-label">Tel Aviv University</p>
     <h1 class="header-name">Diego Alonso Rotta Valverde</h1>
-    <p class="header-program">State, Law and the Economy</p>
+    <p class="header-program">Economic Growth and Distributive Justice</p>
     <p class="header-sub">Certificates of Achievement Repository</p>
     <div class="ornament">
       <div class="ornament-line"></div>
@@ -361,30 +286,30 @@
   </div>
 
   <!-- Certificates -->
-  <p class="section-label">Verified Certificates &middot; 2025</p>
+  <p class="section-label">Course Certificates &middot; 2025</p>
 
   <div class="cards">
 
     <!-- Certificate I -->
-    <a href="https://courses.edx.org/certificates/1eb0dd564bd34726913e185826977f52" class="card" target="_blank">
+    <a href="https://coursera.org/verify/YF500OPPHM90" class="card" target="_blank">
       <div class="card-number">I</div>
       <div class="card-body">
-        <span class="card-badge">Verified Certificate</span>
-        <h2 class="card-title">State, Law and the Economy I</h2>
-        <p class="card-code">ECONx.1 &middot; The University of Hong Kong</p>
-        <p class="card-date">Issued June 28, 2025</p>
+        <span class="card-badge">Tel Aviv University &middot; Course Certificate</span>
+        <h2 class="card-title">Economic Growth and Distributive Justice Part I &mdash; The Role of the State</h2>
+        <p class="card-code">The Buchman Faculty of Law &middot; Tel Aviv University</p>
+        <p class="card-date">Issued June 24, 2025</p>
         <span class="btn">View certificate &rarr;</span>
       </div>
     </a>
 
     <!-- Certificate II -->
-    <a href="https://courses.edx.org/certificates/53c525acf46b4ae3b3a412e447b034c3" class="card" target="_blank">
+    <a href="https://coursera.org/verify/L42U9FGX8FQS" class="card" target="_blank">
       <div class="card-number">II</div>
       <div class="card-body">
-        <span class="card-badge">Verified Certificate</span>
-        <h2 class="card-title">State, Law and the Economy II</h2>
-        <p class="card-code">ECONx.2 &middot; The University of Hong Kong</p>
-        <p class="card-date">Issued June 30, 2025</p>
+        <span class="card-badge">Tel Aviv University &middot; Course Certificate</span>
+        <h2 class="card-title">Economic Growth and Distributive Justice Part II &mdash; Maximize Social Wellbeing</h2>
+        <p class="card-code">The Buchman Faculty of Law &middot; Tel Aviv University</p>
+        <p class="card-date">Issued June 25, 2025</p>
         <span class="btn">View certificate &rarr;</span>
       </div>
     </a>
@@ -392,13 +317,11 @@
   </div>
 
   <!-- Note -->
-  <p class="repo-note">
-    This repository provides a transparent and accessible record of professional certificates obtained through recognized academic programs and institutions. It is intended to facilitate the verification of credentials by third parties. All certificates remain the responsibility of their respective issuing institutions.
-    
-  </p>
+  <p class="repo-note">This repository provides a transparent and accessible record of professional certificates obtained through recognized training programs and institutions. It is intended to facilitate the verification of credentials by third parties. All certificates remain the responsibility of their respective issuing institutions.</p>
 
-  <p class="footer">&copy; 2025 &middot; Diego Alonso Rotta Valverde &middot; Certificates issued by The University of Hong Kong</p>
+  <p class="footer">&copy; 2025 &middot; Diego Alonso Rotta Valverde &middot; Certificates issued by Tel Aviv University</p>
 
 </div>
 </body>
 </html>
+
