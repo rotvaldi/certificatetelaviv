@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diego Alonso Rotta Valverde | State, Law and the Economy – The University of Hong Kong</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  :root{
+    --hku-green: #00573F;
+    --hku-green-dark: #003D2C;
+    --hku-green-light: #006B4F;
+    --hku-gold: #B8972A;
+    --hku-gold-light: #D4B04A;
+    --hku-red: #8B1A1A;
+    --bg: #F4F1EC;
+    --surface: #FFFDF9;
+    --border: #D9D0BC;
+    --text-primary: #1A1A14;
+    --text-secondary: #4A4A3A;
+    --text-muted: #7A7A6A;
+  }
+
+  body{
+    font-family:'Source Sans 3',sans-serif;
+    background-color: var(--bg);
+    min-height:100vh;
+    padding:48px 20px;
+    background-image: radial-gradient(ellipse at 20% 10%, rgba(0,87,63,0.06) 0%, transparent 60%),
+                      radial-gradient(ellipse at 80% 90%, rgba(184,151,42,0.06) 0%, transparent 60%);
+  }
+
+  .page-wrap{
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .header{
+    text-align:center;
+    margin-bottom: 48px;
+  }
+
+  .logo-ring{
+    display:inline-block;
+    margin-bottom: 24px;
+  }
+
+  .logo-ring img{
+    width:370px;
+    height:auto;
+  }
+
+  .header-label{
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--hku-green);
+    margin-bottom: 10px;
+  }
+
+  .header-name{
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .header-program{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: var(--hku-green);
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+
+  .header-sub{
+    font-size: 0.82em;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .ornament{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 12px;
+    margin: 24px auto;
+  }
+
+  .ornament-line{
+    height:1px;
+    width:80px;
+    background: linear-gradient(to right, transparent, var(--hku-gold));
+  }
+
+  .ornament-line.right{
+    background: linear-gradient(to left, transparent, var(--hku-gold));
+  }
+
+  .ornament-diamond{
+    width:8px;
+    height:8px;
+    background: var(--hku-gold);
+    transform: rotate(45deg);
+  }
+
+  /* ── Section label ── */
+  .section-label{
+    font-size:0.7em;
+    font-weight:600;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color: var(--hku-gold);
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .section-label::after{
+    content:'';
+    flex:1;
+    height:1px;
+    background: linear-gradient(to right, var(--border), transparent);
+  }
+
+  /* ── Cards ── */
+  .cards{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-bottom: 40px;
+  }
+
+  .card{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 32px 30px 26px;
+    text-decoration:none;
+    display:flex;
+    align-items:flex-start;
+    gap: 24px;
+    transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .card::before{
+    content:'';
+    position:absolute;
+    left:0; top:0; bottom:0;
+    width:4px;
+    background: var(--hku-green);
+    border-radius: 6px 0 0 6px;
+    transition: width 0.25s;
+  }
+
+  .card:hover{
+    box-shadow: 0 10px 36px rgba(0,87,63,0.14);
+    transform: translateY(-3px);
+    border-color: var(--hku-green);
+  }
+
+  .card:hover::before{
+    width:6px;
+  }
+
+  .card-number{
+    flex-shrink:0;
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    background: var(--hku-green);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-size:1.3em;
+    font-weight:700;
+    margin-top:2px;
+  }
+
+  .card-body{
+    flex:1;
+  }
+
+  .card-badge{
+    display:inline-block;
+    font-size:0.68em;
+    font-weight:600;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: var(--hku-green);
+    background: rgba(0,87,63,0.07);
+    padding:3px 10px;
+    border-radius:2px;
+    margin-bottom:10px;
+  }
+
+  .card-title{
+    font-family:'Playfair Display',serif;
+    font-size:1.18em;
+    font-weight:700;
+    color: var(--text-primary);
+    margin-bottom:8px;
+    line-height:1.35;
+  }
+
+  .card-code{
+    font-size:0.82em;
+    color: var(--text-secondary);
+    margin-bottom:4px;
+  }
+
+  .card-date{
+    font-size:0.77em;
+    color: var(--text-muted);
+    margin-bottom:14px;
+  }
+
+  .card-id{
+    font-size:0.72em;
+    color: var(--text-muted);
+    font-family: 'Courier New', monospace;
+    background: rgba(0,0,0,0.04);
+    padding:4px 8px;
+    border-radius:3px;
+    margin-bottom:16px;
+    word-break:break-all;
+  }
+
+  .btn{
+    display:inline-block;
+    background: var(--hku-green);
+    color:#fff;
+    padding:9px 20px;
+    border-radius:3px;
+    font-size:0.8em;
+    font-weight:600;
+    text-decoration:none;
+    letter-spacing:0.04em;
+    transition:background 0.2s;
+  }
+
+  .btn:hover{background: var(--hku-green-dark);}
+
+  /* ── Signatory block ── */
+  .signatory{
+    background: var(--surface);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:24px 28px;
+    margin-bottom: 40px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+  }
+
+  .signatory-icon{
+    flex-shrink:0;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:2px solid var(--hku-gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: var(--hku-gold);
+    font-size:1.2em;
+  }
+
+  .signatory-text{
+    flex:1;
+  }
+
+  .signatory-text .sig-label{
+    font-size:0.68em;
+    font-weight:600;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: var(--text-muted);
+    margin-bottom:4px;
+  }
+
+  .signatory-text .sig-name{
+    font-family:'Playfair Display',serif;
+    font-size:0.98em;
+    font-weight:700;
+    color: var(--text-primary);
+    margin-bottom:2px;
+  }
+
+  .signatory-text .sig-role{
+    font-size:0.79em;
+    color: var(--text-secondary);
+  }
+
+  /* ── Footer ── */
+  .repo-note{
+    text-align:justify;
+    font-size:0.82em;
+    color: var(--text-muted);
+    line-height:1.6;
+    max-width:700px;
+    margin:32px auto 12px;
+  }
+
+  .footer{
+    text-align:center;
+    font-size:0.76em;
+    color: var(--text-muted);
+    margin-top:8px;
+  }
+
+  .edx-note{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:0.74em;
+    color: var(--text-muted);
+    background: rgba(0,0,0,0.04);
+    padding:4px 12px;
+    border-radius:20px;
+    margin-top:6px;
+  }
+
+  @media(max-width:580px){
+    .card{flex-direction:column;gap:16px;}
+    .card-number{width:42px;height:42px;font-size:1.1em;}
+    .header-name{font-size:1.6em;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-ring">
+      <img src="https://raw.githubusercontent.com/rotvaldi/certificatehongkong/main/University_of_Hong_Kong_Logo.png" alt="The University of Hong Kong" />
+    </div>
+    <p class="header-label">The University of Hong Kong</p>
+    <h1 class="header-name">Diego Alonso Rotta Valverde</h1>
+    <p class="header-program">State, Law and the Economy</p>
+    <p class="header-sub">Certificates of Achievement Repository</p>
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line right"></div>
+    </div>
+  </div>
+
+  <!-- Certificates -->
+  <p class="section-label">Verified Certificates &middot; 2025</p>
+
+  <div class="cards">
+
+    <!-- Certificate I -->
+    <a href="https://courses.edx.org/certificates/1eb0dd564bd34726913e185826977f52" class="card" target="_blank">
+      <div class="card-number">I</div>
+      <div class="card-body">
+        <span class="card-badge">Verified Certificate</span>
+        <h2 class="card-title">State, Law and the Economy I</h2>
+        <p class="card-code">ECONx.1 &middot; The University of Hong Kong</p>
+        <p class="card-date">Issued June 28, 2025</p>
+        <span class="btn">View certificate &rarr;</span>
+      </div>
+    </a>
+
+    <!-- Certificate II -->
+    <a href="https://courses.edx.org/certificates/53c525acf46b4ae3b3a412e447b034c3" class="card" target="_blank">
+      <div class="card-number">II</div>
+      <div class="card-body">
+        <span class="card-badge">Verified Certificate</span>
+        <h2 class="card-title">State, Law and the Economy II</h2>
+        <p class="card-code">ECONx.2 &middot; The University of Hong Kong</p>
+        <p class="card-date">Issued June 30, 2025</p>
+        <span class="btn">View certificate &rarr;</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Note -->
+  <p class="repo-note">
+    This repository provides a transparent and accessible record of professional certificates obtained through recognized academic programs and institutions. It is intended to facilitate the verification of credentials by third parties. All certificates remain the responsibility of their respective issuing institutions.
+    
+  </p>
+
+  <p class="footer">&copy; 2025 &middot; Diego Alonso Rotta Valverde &middot; Certificates issued by The University of Hong Kong</p>
+
+</div>
+</body>
+</html>
